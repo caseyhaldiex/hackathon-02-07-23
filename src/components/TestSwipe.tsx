@@ -1,32 +1,11 @@
-// import TinderCard from 'react-tinder-card'
-// import DispatchCard from './DispatchCard'
-
-// const onSwipe = (direction: string) => {
-//   console.log('You swiped: ' + direction)
-// }
-
-// const onCardLeftScreen = (myIdentifier: string) => {
-//   console.log(myIdentifier + ' left the screen')
-// }
-
-// const TestSwipe = () => {
-//   return (
-//     <div className="TestSwipe border border-red-500">
-//       <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
-//         <DispatchCard dispatchMessageId="120" />
-//       </TinderCard>
-//       <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
-//         <DispatchCard dispatchMessageId="196" />
-//       </TinderCard>
-//     </div>
-//   )
-// };
-
 // export default TestSwipe;
 import classNames from "classnames";
 import React, { useState } from "react";
 import DispatchCard from "./DispatchCard";
 // import TinderCard from "react-tinder-card";
+
+import dislikeImage from "../assets/woozy-face_1f974.png";
+import thumbsupImage from "../assets/thumbs-up_1f44d.png";
 
 const items = [
   {
@@ -60,12 +39,18 @@ function TestSwipe() {
 
   return (
     <div className="text-white text-center">
-      <h1>Tell us what kind of messages you would like to see...</h1>
+      <h1 className="my-10">
+        Tell us what kind of messages you would like to see...
+      </h1>
       <div className="flex justify-center items-center max-w-[800px] mx-auto">
-        <div className="btn cursor-pointer" onClick={() => setLike(false)}>
-          no thanks
+        <div
+          className="btn cursor-pointer flex flex-col justify-center items-center"
+          onClick={() => setLike(false)}
+        >
+          <img src={dislikeImage} alt="" className="w-6 text-center" />
+          No thanks!
         </div>
-        <div className="cardContainer w-[380px] h-[300px] mx-auto overflow-hidden">
+        <div className="cardContainer w-[380px] h-[300px] mx-[80px] overflow-hidden">
           {items.map((item, i) => (
             <div
               className={classNames("absolute transition-all duration-500", {
@@ -80,7 +65,11 @@ function TestSwipe() {
             </div>
           ))}
         </div>
-        <div className="btn cursor-pointer" onClick={() => setLike(true)}>
+        <div
+          className="btn cursor-pointer flex flex-col justify-center items-center"
+          onClick={() => setLike(true)}
+        >
+          <img src={thumbsupImage} alt="" className="w-6" />
           more like this
         </div>
       </div>
