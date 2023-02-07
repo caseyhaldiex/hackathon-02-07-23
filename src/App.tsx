@@ -12,6 +12,7 @@ import { useState } from "react";
 import { MoreLikeThisStep } from "./components/MoreLikeThisStep/MoreLikeThisStep";
 import Topics from "./components/Topics";
 import Loom from "./components/Loom";
+import { AllDone } from "./components/AllDone/AllDone";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -26,9 +27,7 @@ function Layout() {
           {step === 1 && <Topics />}
           {step === 2 && <TestSwipe />}
           <div>
-            {step === 3 && (
-              <MoreLikeThisStep onClick={() => console.log("next choice")} />
-            )}
+            {step === 3 && <AllDone onClick={() => console.log("all done")} />}
           </div>
         </>
       </Modal>
