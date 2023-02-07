@@ -9,21 +9,30 @@ import thumbsupImage from "../assets/thumbs-up_1f44d.png";
 
 const items = [
   {
-    name: "Richard Hendricks",
+    name: "",
+    id: 120,
   },
   {
-    name: "Erlich Bachman",
+    name: "",
+    id: 196,
   },
   {
-    name: "Monica Hall",
+    name: "",
+    id: 269,
   },
   {
-    name: "Jared Dunn",
+    name: "",
+    id: 120,
   },
   {
-    name: "Dinesh Chugtai",
+    name: "",
+    id: 196,
   },
-] as { name: string; liked?: boolean }[];
+  {
+    name: "",
+    id: 269,
+  },
+] as { name: string; id: number; liked?: boolean }[];
 
 function TestSwipe() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,7 +70,8 @@ function TestSwipe() {
                   item.liked === false,
               })}
             >
-              <DispatchCard dispatchMessageId="120" />
+              {item.id}
+              <DispatchCard dispatchMessageId={String(item.id)} />
             </div>
           ))}
         </div>
