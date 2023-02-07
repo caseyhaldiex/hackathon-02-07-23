@@ -29,9 +29,7 @@ function Layout() {
           <div>
             {step === 3 && (
               <AllDone
-                onClick={() =>
-                  window.open("https://app.dispatch.xyz/inbox", "_blank")
-                }
+                onClick={() => window.open("https://app.dispatch.xyz/inbox")}
               />
             )}
           </div>
