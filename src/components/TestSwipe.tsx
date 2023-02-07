@@ -10,7 +10,7 @@ import thumbsupImage from "../assets/thumbs-up_1f44d.png";
 const items = [
   {
     name: "",
-    id: 120,
+    id: 32,
   },
   {
     name: "",
@@ -22,7 +22,7 @@ const items = [
   },
   {
     name: "",
-    id: 120,
+    id: 32,
   },
   {
     name: "",
@@ -34,11 +34,16 @@ const items = [
   },
 ] as { name: string; id: number; liked?: boolean }[];
 
-function TestSwipe() {
+function TestSwipe(props: { onComplete: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentItems, setCurrentItems] = useState(items);
 
   const setLike = (val: boolean) => {
+    if (currentIndex === items.length - 1) {
+      props.onComplete();
+      return;
+    }
+
     const newItems = [...currentItems];
     currentItems[currentIndex].liked = val;
 
@@ -70,7 +75,6 @@ function TestSwipe() {
                   item.liked === false,
               })}
             >
-              {item.id}
               <DispatchCard dispatchMessageId={String(item.id)} />
             </div>
           ))}
