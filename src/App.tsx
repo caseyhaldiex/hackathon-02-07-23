@@ -2,7 +2,7 @@ import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import DispatchCard from "./components/DispatchCard";
 import { WagmiProvider } from "./providers/Wagmi";
 import TestSwipe from "./components/TestSwipe";
@@ -10,6 +10,7 @@ import Intro from "./components/Intro";
 import { Modal } from "./components/Modal/Modal";
 import { useState } from "react";
 import { MoreLikeThisStep } from "./components/MoreLikeThisStep/MoreLikeThisStep";
+import Topics from "./components/Topics";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -25,7 +26,6 @@ function Layout() {
           )}
         </div>
       </Modal>
-      <Navbar />
       <TestSwipe />
       <Outlet />
     </>
@@ -47,6 +47,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* <Route path="intro" element={<Intro />} />
+          <Route path="intro" element={<Intro />} />
+          <Route path="topics" element={<Topics />} />
           <Route
             path="info-card"
             element={<DispatchCard dispatchMessageId="120" />}
