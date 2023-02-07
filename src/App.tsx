@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./components/Navbar"
 import DispatchCard from "./components/DispatchCard"
 import { WagmiProvider } from './providers/Wagmi';
+import Intro from "./components/Intro";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -13,7 +14,7 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 function Layout() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
     </>
   );
@@ -25,7 +26,7 @@ function App() {
   // if there is no route, redirect to /info-card
   useEffect(() => {
     if (window.location.pathname === '/') {
-      navigate("/info-card")
+      navigate("/intro")
     }
   }, [navigate]);
 
@@ -33,6 +34,7 @@ function App() {
     <WagmiProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="intro" element={<Intro />} />
           <Route path="info-card" element={<DispatchCard dispatchMessageId="120" />} />
           <Route path="poll-card" element={<DispatchCard dispatchMessageId="196" />} />
           <Route path="action-card" element={<DispatchCard dispatchMessageId="269" />} />
