@@ -209,9 +209,7 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
           allow="clipboard-read; clipboard-write"
           width={380}
           height={300}
-          src={
-            "https://sdk.dispatch.xyz/?dispatchMessageId=32&source=my-cool-site?isSquare=true&backgroundColor=111111"
-          }
+          src={`https://sdk.dispatch.xyz/?dispatchMessageId=${dispatchMessageId}&source=my-cool-site?isSquare=true&backgroundColor=111111`}
           title="dispatch poll card"
         />
       ) : (

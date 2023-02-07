@@ -25,7 +25,7 @@ function Layout() {
         <>
           {step === 0 && <Loom />}
           {step === 1 && <Topics />}
-          {step === 2 && <TestSwipe />}
+          {step === 2 && <TestSwipe onComplete={() => setStep(step + 1)} />}
           <div>
             {step === 3 && <AllDone onClick={() => console.log("all done")} />}
           </div>
