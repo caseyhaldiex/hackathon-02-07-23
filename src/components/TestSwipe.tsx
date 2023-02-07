@@ -39,16 +39,17 @@ function TestSwipe(props: { onComplete: () => void }) {
   const [currentItems, setCurrentItems] = useState(items);
 
   const setLike = (val: boolean) => {
-    if (currentIndex === items.length - 1) {
-      props.onComplete();
-      return;
-    }
-
     const newItems = [...currentItems];
     currentItems[currentIndex].liked = val;
 
     setCurrentItems(newItems);
     setCurrentIndex(currentIndex + 1);
+
+    if (currentIndex === items.length - 1) {
+      setTimeout(() => {
+        props.onComplete();
+      }, 500);
+    }
   };
 
   return (
