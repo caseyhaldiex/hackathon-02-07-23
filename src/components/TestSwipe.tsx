@@ -23,11 +23,12 @@
 // };
 
 // export default TestSwipe;
+import classNames from "classnames";
 import React, { useState } from "react";
 import DispatchCard from "./DispatchCard";
-import TinderCard from "react-tinder-card";
+// import TinderCard from "react-tinder-card";
 
-const db = [
+const items = [
   {
     name: "Richard Hendricks",
   },
@@ -43,62 +44,49 @@ const db = [
   {
     name: "Dinesh Chugtai",
   },
-];
-// const db = [
-//   {
-//     name: "Richard Hendricks",
-//     url: "./img/richard.jpg",
-//   },
-//   {
-//     name: "Erlich Bachman",
-//     url: "./img/erlich.jpg",
-//   },
-//   {
-//     name: "Monica Hall",
-//     url: "./img/monica.jpg",
-//   },
-//   {
-//     name: "Jared Dunn",
-//     url: "./img/jared.jpg",
-//   },
-//   {
-//     name: "Dinesh Chugtai",
-//     url: "./img/dinesh.jpg",
-//   },
-// ];
+] as { name: string; liked?: boolean }[];
 
-function Simple() {
-  const characters = db;
-  const [lastDirection, setLastDirection] = useState<string>("");
+function TestSwipe() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentItems, setCurrentItems] = useState(items);
 
-  const outOfFrame = (name: string) => {
-    console.log(name + " left the screen!");
-  };
+  const setLike = (val: boolean) => {
+    const newItems = [...currentItems];
+    currentItems[currentIndex].liked = val;
 
-  const swiped = (direction: string, nameToDelete: string) => {
-    console.log("removing: " + nameToDelete);
-    setLastDirection(direction);
+    setCurrentItems(newItems);
+    setCurrentIndex(currentIndex + 1);
   };
 
   return (
-    <div>
-      <div className="cardContainer w-80 mx-auto">
-        {characters.map((character) => (
-          <TinderCard
-            className="swipe"
-            key={character.name}
-            onSwipe={(dir) => swiped(dir, character.name)}
-            onCardLeftScreen={() => outOfFrame(character.name)}
-          >
-            <div className="absolute">
+    <div className="text-white text-center">
+      <h1>Tell us what kind of messages you would like to see...</h1>
+      <div className="flex justify-center items-center max-w-[800px] mx-auto">
+        <div className="btn cursor-pointer" onClick={() => setLike(false)}>
+          no thanks
+        </div>
+        <div className="cardContainer w-[380px] h-[300px] mx-auto overflow-hidden">
+          {items.map((item, i) => (
+            <div
+              className={classNames("absolute transition-all duration-500", {
+                "pointer-events-none opacity-0":
+                  item.liked !== undefined || i !== currentIndex,
+                "translate-x-[200px] rotate-12 scale-80": item.liked === true,
+                "-translate-x-[200px] -rotate-12 scale-80":
+                  item.liked === false,
+              })}
+            >
               <DispatchCard dispatchMessageId="120" />
             </div>
-          </TinderCard>
-        ))}
+          ))}
+        </div>
+        <div className="btn cursor-pointer" onClick={() => setLike(true)}>
+          more like this
+        </div>
       </div>
-      {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
+      {/* <p>currentItems: {JSON.stringify(currentItems)}</p> */}
     </div>
   );
 }
 
-export default Simple;
+export default TestSwipe;

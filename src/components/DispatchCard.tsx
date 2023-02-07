@@ -197,7 +197,7 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
   };
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto pt-10 pointer-events-none">
+    <div className="flex flex-col items-center justify-center mx-auto">
       {isWalletConnectOpen && (
         <WalletConnectModal
           isOpen={isWalletConnectOpen}
@@ -207,8 +207,8 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
       {dispatchEmbedUrl ? (
         <iframe
           allow="clipboard-read; clipboard-write"
-          height={1000}
-          width={300}
+          width={380}
+          height={300}
           src={
             "https://sdk.dispatch.xyz/?dispatchMessageId=32&source=my-cool-site?isSquare=true&backgroundColor=111111"
           }
