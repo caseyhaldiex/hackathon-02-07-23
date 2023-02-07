@@ -1,0 +1,74 @@
+{
+	"DeFi": [{
+		"id": "lido",
+		"name": "Lido",
+		"logo": "https://s2.coinmarketcap.com/static/img/coins/128x128/8000.png",
+		"messages": []
+	}],
+	"POAP": [{
+		"id": "zerion",
+		"name": "Zerion",
+		"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1675458783/public/manually_uploaded_tokens/photo1675354335_1_ghkalk.jpg",
+		"messages": [
+			"68",
+			"65",
+			"55",
+			"54"
+		]
+	}],
+	"DAO": [{
+		"id": "Pool",
+		"name": "pool",
+		"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1662479995/public/manually_uploaded_tokens/pool-20220823-153907_summp2.png",
+		"messages": [
+			"39",
+			"42"
+		]
+	}],
+	"NFT": [{
+			"id": "GMTrivia",
+			"name": "gmtrivia",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1664821391/public/community_logos/GMTRIVIA_geqh9y.png",
+			"messages": [
+				"25", "27", "28", "29", "31", "32", "33", "34", "35", "36", "37"
+			]
+		},
+		{
+			"id": "GastonX",
+			"name": "gastonx",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1668705718/public/nft_communities_logos/gaston_pfp_xmqfua.png",
+			"messages": [
+				"45",
+				"46",
+				"51",
+				"52"
+			]
+		},
+		{
+
+			"id": "Warpsound",
+			"name": "wvrps",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1670861427/wvrps_pfp_xjw995.gif",
+			"messages": [
+				"64"
+			]
+		}
+	],
+	"Protocol": [{
+			"id": "Layer3",
+			"name": "layer3",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1664470282/public/manually_uploaded_tokens/L3_Profile_Pic_t7ieyf.png",
+			"messages": [
+				"23"
+			]
+		},
+		{
+			"id": "galxe",
+			"name": "Galxe",
+			"logo": "https://s2.coinmarketcap.com/static/img/coins/128x128/11877.png",
+			"messages": [
+				"38"
+			]
+		}
+	]
+}
