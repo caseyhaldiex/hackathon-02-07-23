@@ -7,13 +7,19 @@ import DispatchCard from "./components/DispatchCard";
 import { WagmiProvider } from "./providers/Wagmi";
 import TestSwipe from "./components/TestSwipe";
 import Intro from "./components/Intro";
+import { Modal } from "./components/Modal/Modal";
+import { useState } from "react";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function Layout() {
+  const [step, setStep] = useState(0);
   return (
     <>
+      <Modal onClick={() => setStep(step + 1)}>
+        <div>{step}</div>
+      </Modal>
       <Navbar />
       <TestSwipe />
       <Outlet />
