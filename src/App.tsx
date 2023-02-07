@@ -27,7 +27,11 @@ function Layout() {
           {step === 1 && <Topics />}
           {step === 2 && <TestSwipe onComplete={() => setStep(step + 1)} />}
           <div>
-            {step === 3 && <AllDone onClick={() => console.log("all done")} />}
+            {step === 3 && (
+              <AllDone
+                onClick={() => window.open("https://app.dispatch.xyz/inbox")}
+              />
+            )}
           </div>
         </>
       </Modal>

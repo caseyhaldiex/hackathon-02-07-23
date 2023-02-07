@@ -6,6 +6,7 @@ import DispatchCard from "./DispatchCard";
 
 import dislikeImage from "../assets/woozy-face_1f974.png";
 import thumbsupImage from "../assets/thumbs-up_1f44d.png";
+import { Spinner } from "./Spinner";
 
 const items = [
   {
@@ -59,7 +60,7 @@ function TestSwipe(props: { onComplete: () => void }) {
       </h1>
       <div className="flex justify-center items-center max-w-[800px] mx-auto">
         <div
-          className="btn text-sm cursor-pointer flex flex-col justify-center items-center"
+          className="btn cursor-pointer flex flex-col justify-center items-center border border-[#0E1116] hover:border-[#4088F7] hover:rounded p-2 transition ml-4"
           onClick={() => setLike(false)}
         >
           <img src={dislikeImage} alt="" className="w-6 mb-1" />
@@ -81,7 +82,7 @@ function TestSwipe(props: { onComplete: () => void }) {
           ))}
         </div>
         <div
-          className="btn text-sm cursor-pointer flex flex-col justify-center items-center"
+          className="btn cursor-pointer flex flex-col justify-center items-center border border-[#0E1116] hover:border-[#4088F7] hover:rounded p-2 transition mr-4"
           onClick={() => setLike(true)}
         >
           <img src={thumbsupImage} alt="" className="w-6 mb-1" />
