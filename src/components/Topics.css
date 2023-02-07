@@ -2,6 +2,7 @@
   position: relative;
   border: 0.58px solid;
   border-radius: 8px;
+  min-width: 220px;
 
   background: #000;
 
@@ -52,7 +53,6 @@
 .add-btn {
   justify-content: center;
   align-items: flex-end;
-  padding: 9.22666px 13.84px;
   background: #158aff;
   border-radius: 36.9066px;
 }
