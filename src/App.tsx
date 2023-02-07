@@ -10,6 +10,7 @@ import Intro from "./components/Intro";
 import { Modal } from "./components/Modal/Modal";
 import { useState } from "react";
 import Topics from "./components/Topics";
+import Loom from "./components/Loom";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -19,9 +20,16 @@ function Layout() {
   return (
     <>
       <Modal onClick={() => setStep(step + 1)}>
-        <div>{step}</div>
+        {step === 0 && (
+          <Loom />
+        )} 
+        {step === 1 && (
+          <Topics />
+        )} 
+        {step === 2 && (
+          <TestSwipe />
+        )} 
       </Modal>
-      <TestSwipe />
       <Outlet />
     </>
   );
