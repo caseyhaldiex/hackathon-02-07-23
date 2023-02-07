@@ -14,7 +14,7 @@ export const AllDone = ({ onClick }: AllDoneTypes) => {
         </div>
         <button
           onClick={onClick}
-          className="bg-[#4088F7] py-2 px-4 rounded text-sm mt-6"
+          className="bg-[#4088F7] py-2 px-4 text-sm mt-6 rounded-full"
         >
           All Done! 🥳
         </button>
