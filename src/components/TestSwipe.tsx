@@ -82,7 +82,7 @@ function Simple() {
 
   return (
     <div>
-      <div className="cardContainer">
+      <div className="cardContainer w-80 mx-auto">
         {characters.map((character) => (
           <TinderCard
             className="swipe"
@@ -95,20 +95,6 @@ function Simple() {
             </div>
           </TinderCard>
         ))}
-        {/* <TinderCard
-          onSwipe={(dir) => swiped(dir, character.name)}
-          onCardLeftScreen={() => outOfFrame("fooBar")}
-          preventSwipe={["right", "left"]}
-        >
-          <DispatchCard dispatchMessageId="120" />
-        </TinderCard>
-        <TinderCard
-          onSwipe={swiped}
-          onCardLeftScreen={() => outOfFrame("fooBar")}
-          preventSwipe={["right", "left"]}
-        >
-          <DispatchCard dispatchMessageId="196" />
-        </TinderCard> */}
       </div>
       {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
     </div>
