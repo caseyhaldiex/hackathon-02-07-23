@@ -21,10 +21,7 @@ const topics = parseData(data);
 
 export default function Topics() {
   return (
-    <div className="relative px-6 pt-16 pb-20 lg:px-8 lg:pt-24 lg:pb-28">
-      <div className="absolute inset-0">
-        <div className="h-1/3 sm:h-2/3" />
-      </div>
+    <div className="relative px-6 pt-2 pb-20 lg:px-8 lg:pt-8 lg:pb-28">
       <div className="relative mx-auto max-w-7xl">
         <div className="text-center">
           {/* <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"></h2> */}
@@ -33,15 +30,15 @@ export default function Topics() {
           </p>
         </div>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-          {topics.map((topic) => (
+          {topics.map((topic:any) => (
             <div key={topic.title} className="flex flex-col overflow-hidden shadow-lg topic-item pb-4 border-r-4">
               <div className="flex flex-1 flex-col justify-between p-6">
                 <div className="flex-1">
-                  <div className="mt-2 block mb-4">
+                  <div className="mt-2 block pb-8">
                     <p className="text-xl font-semibold text-white">{topic.title}</p>
-                    <p className="mt-3 text-base text-white">{topic.description}</p>
+                    <p className="mt-3 text-xs text-white pb-6">{topic.description}</p>
                   </div>
-                  <div className="mt-2 block">
+                  <div className="mt-2 block absolute bottom-8">
                     <a className="btn text-white add-btn" href="#">Add</a>
                   </div>
                 </div>
