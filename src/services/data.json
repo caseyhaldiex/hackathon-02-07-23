@@ -1,31 +1,42 @@
 {
-	"DeFi": [{
-		"id": "lido",
-		"name": "Lido",
-		"logo": "https://s2.coinmarketcap.com/static/img/coins/128x128/8000.png",
-		"messages": []
-	}],
-	"POAP": [{
-		"id": "zerion",
-		"name": "Zerion",
-		"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1675458783/public/manually_uploaded_tokens/photo1675354335_1_ghkalk.jpg",
-		"messages": [
-			"68",
-			"65",
-			"55",
-			"54"
-		]
-	}],
-	"DAO": [{
-		"id": "Pool",
-		"name": "pool",
-		"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1662479995/public/manually_uploaded_tokens/pool-20220823-153907_summp2.png",
-		"messages": [
-			"39",
-			"42"
-		]
-	}],
-	"NFT": [{
+	"DeFi": {
+		"description": "Bullshit, bullshit, staking",
+		"projects": [{
+			"id": "lido",
+			"name": "Lido",
+			"logo": "https://s2.coinmarketcap.com/static/img/coins/128x128/8000.png",
+			"messages": []
+		}]
+	},
+	"POAP": {
+		"description": "No POAP, no proof",
+		"projects": [{
+			"id": "zerion",
+			"name": "Zerion",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1675458783/public/manually_uploaded_tokens/photo1675354335_1_ghkalk.jpg",
+			"messages": [
+				"68",
+				"65",
+				"55",
+				"54"
+			]
+		}]
+	},
+	"DAO": {
+		"description": "Members only",
+		"projects": [{
+			"id": "Pool",
+			"name": "pool",
+			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1662479995/public/manually_uploaded_tokens/pool-20220823-153907_summp2.png",
+			"messages": [
+				"39",
+				"42"
+			]
+		}]
+	},
+	"NFT": {
+		"description": "Buy some gifs for the price of car",
+		"projects": [{
 			"id": "GMTrivia",
 			"name": "gmtrivia",
 			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1664821391/public/community_logos/GMTRIVIA_geqh9y.png",
@@ -53,8 +64,11 @@
 				"64"
 			]
 		}
-	],
-	"Protocol": [{
+	]
+	},
+	"Protocol": {
+		"description": "Stuff that makes things work in crypto",
+		"projects": [{
 			"id": "Layer3",
 			"name": "layer3",
 			"logo": "https://res.cloudinary.com/dispatchxyz/image/upload/c_scale,h_56,w_56/v1664470282/public/manually_uploaded_tokens/L3_Profile_Pic_t7ieyf.png",
@@ -71,4 +85,5 @@
 			]
 		}
 	]
+	}
 }
