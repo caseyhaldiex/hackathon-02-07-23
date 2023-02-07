@@ -90,7 +90,9 @@ function Simple() {
             onSwipe={(dir) => swiped(dir, character.name)}
             onCardLeftScreen={() => outOfFrame(character.name)}
           >
-            <DispatchCard dispatchMessageId="120" />
+            <div className="absolute">
+              <DispatchCard dispatchMessageId="120" />
+            </div>
           </TinderCard>
         ))}
         {/* <TinderCard
