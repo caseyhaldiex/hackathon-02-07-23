@@ -13,9 +13,15 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { BigNumber } from "ethers";
 import { fetchBalance, prepareWriteContract, writeContract } from "@wagmi/core";
-import { useAccount, useDisconnect, useSignMessage, useSwitchNetwork, useNetwork } from "wagmi";
+import {
+  useAccount,
+  useDisconnect,
+  useSignMessage,
+  useSwitchNetwork,
+  useNetwork,
+} from "wagmi";
 
-import { WalletConnectModal } from "./WalletConnectModal"
+import { WalletConnectModal } from "./WalletConnectModal";
 
 interface DispatchCardProps {
   dispatchMessageId: string;
@@ -60,30 +66,32 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
     dispatch.setChainId(chain?.id);
   }, [chain]);
 
-  const handleRequestWalletConnection: IOnRequestWalletConnection = async () => {
-    if (!isConnected) {
-      setIsWalletConnectOpen(true);
-    } else {
-      console.log(
-        "Can't request a wallet connection because the wallet is already connected."
-      );
-      toast("Wallet is already connected!", { type: "info" });
-    }
-  };
+  const handleRequestWalletConnection: IOnRequestWalletConnection =
+    async () => {
+      if (!isConnected) {
+        setIsWalletConnectOpen(true);
+      } else {
+        console.log(
+          "Can't request a wallet connection because the wallet is already connected."
+        );
+        toast("Wallet is already connected!", { type: "info" });
+      }
+    };
 
-  const handleRequestWalletDisconnection: IOnRequestWalletDisconnection = async () => {
-    if (isConnected) {
-      await disconnectAsync();
-    } else {
-      console.log(
-        "Can't request a wallet disconnection because no wallet is connected."
-      );
-      toast("No connected wallet to disconnect from!", { type: "info" });
-    }
-  };
+  const handleRequestWalletDisconnection: IOnRequestWalletDisconnection =
+    async () => {
+      if (isConnected) {
+        await disconnectAsync();
+      } else {
+        console.log(
+          "Can't request a wallet disconnection because no wallet is connected."
+        );
+        toast("No connected wallet to disconnect from!", { type: "info" });
+      }
+    };
 
   const handleSignMessage: IOnSignMessage = async ({ event }) => {
-    const eventType = event.data.data.event.type
+    const eventType = event.data.data.event.type;
     try {
       const message = dispatch.formatMessageForSigning({
         dispatchMessageId: event.data.dispatchMessageId,
@@ -189,7 +197,7 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
   };
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto pt-10">
+    <div className="container flex flex-col items-center justify-center mx-auto pt-10 pointer-events-none">
       {isWalletConnectOpen && (
         <WalletConnectModal
           isOpen={isWalletConnectOpen}
@@ -200,15 +208,17 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
         <iframe
           allow="clipboard-read; clipboard-write"
           height={1000}
-          width={600}
-          src={"https://sdk.dispatch.xyz/?dispatchMessageId=32&source=my-cool-site?isSquare=true&backgroundColor=111111"}
+          width={300}
+          src={
+            "https://sdk.dispatch.xyz/?dispatchMessageId=32&source=my-cool-site?isSquare=true&backgroundColor=111111"
+          }
           title="dispatch poll card"
         />
       ) : (
         <p>Loading...</p>
       )}
     </div>
-  )
+  );
 };
 
 export default DispatchCard;

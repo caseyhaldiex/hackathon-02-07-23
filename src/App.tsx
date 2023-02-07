@@ -1,11 +1,11 @@
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
-import { useEffect } from "react"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from "./components/Navbar"
 import DispatchCard from "./components/DispatchCard"
 import { WagmiProvider } from './providers/Wagmi';
+import TestSwipe from "./components/TestSwipe";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -14,6 +14,7 @@ function Layout() {
   return (
     <>
       <Navbar />
+      <TestSwipe />
       <Outlet />
     </>
   );
@@ -23,11 +24,11 @@ function App() {
   const navigate = useNavigate();
 
   // if there is no route, redirect to /info-card
-  useEffect(() => {
-    if (window.location.pathname === '/') {
-      navigate("/info-card")
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (window.location.pathname === '/') {
+  //     navigate("/info-card")
+  //   }
+  // }, [navigate]);
 
   return (
     <WagmiProvider>
