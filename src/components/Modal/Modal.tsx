@@ -11,7 +11,7 @@ export const Modal = ({ children, onClick }: ModalTypes) => {
       style={{ backgroundImage: "url(" + bgImage + ")" }}
       className="h-full w-full flex justify-center items-center fixed bg-black"
     >
-      <div className="h-[660px] w-[802px] text-white bg-[#0E1116] flex items-center justify-start flex-col">
+      <div className="h-[660px] w-[920px] text-white bg-[#0E1116] flex items-center justify-start flex-col">
         <div className="w-full h-[67px] bg-black flex items-center justify-start mb-4">
           <div className="text-white text-md ml-4">
             Get messages based on your interests
