@@ -9,6 +9,7 @@ import TestSwipe from "./components/TestSwipe";
 import Intro from "./components/Intro";
 import { Modal } from "./components/Modal/Modal";
 import { useState } from "react";
+import { MoreLikeThisStep } from "./components/MoreLikeThisStep/MoreLikeThisStep";
 
 // CRA and buffer dont play nice
 window.Buffer = window.Buffer || require("buffer").Buffer;
@@ -18,7 +19,7 @@ function Layout() {
   return (
     <>
       <Modal onClick={() => setStep(step + 1)}>
-        <div>{step}</div>
+        <div>{step === 2 && <MoreLikeThisStep />}</div>
       </Modal>
       <Navbar />
       <TestSwipe />
