@@ -21,20 +21,16 @@ function Layout() {
   return (
     <>
       <Modal onClick={() => setStep(step + 1)}>
-        {step === 0 && (
-          <Loom />
-        )} 
-        {step === 1 && (
-          <Topics />
-        )} 
-        {step === 2 && (
-          <TestSwipe />
-        )}
-        <div>
-          {step === 3 && (
-            <MoreLikeThisStep onClick={() => console.log("next choice")} />
-          )}
-        </div>
+        <>
+          {step === 0 && <Loom />}
+          {step === 1 && <Topics />}
+          {step === 2 && <TestSwipe />}
+          <div>
+            {step === 3 && (
+              <MoreLikeThisStep onClick={() => console.log("next choice")} />
+            )}
+          </div>
+        </>
       </Modal>
       <Outlet />
     </>
