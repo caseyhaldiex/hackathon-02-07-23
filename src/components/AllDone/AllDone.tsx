@@ -4,7 +4,10 @@ interface AllDoneTypes {
 export const AllDone = ({ onClick }: AllDoneTypes) => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="w-[220px] mt-[90px] flex justify-center items-center flex-col">
+      <div className="text-[#545454] w-[240px] mt-[90px] text-md text-center mb-6">
+        Nice! We will show you more messages like this from now on.
+      </div>
+      <div className="w-[220px] flex justify-center items-center flex-col">
         <div className="w-[200px] h-[200px] rounded-full overflow-hidden flex justify-center items-center">
           <img
             alt="snoop doggy dog"

@@ -66,7 +66,7 @@ function TestSwipe(props: { onComplete: () => void }) {
           <img src={dislikeImage} alt="" className="w-6 mb-1" />
           No thanks!
         </div>
-        <div className="cardContainer w-[380px] h-[300px] mx-[80px] overflow-hidden">
+        <div className="cardContainer w-[400px] h-[440px] mx-[80px] overflow-hidden">
           {items.map((item, i) => (
             <div
               className={classNames("absolute transition-all duration-500", {

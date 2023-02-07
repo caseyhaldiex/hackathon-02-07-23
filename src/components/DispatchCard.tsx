@@ -207,8 +207,8 @@ const DispatchCard = ({ dispatchMessageId }: DispatchCardProps) => {
       {dispatchEmbedUrl ? (
         <iframe
           allow="clipboard-read; clipboard-write"
-          width={380}
-          height={300}
+          width={440}
+          height={440}
           src={`https://sdk.dispatch.xyz/?dispatchMessageId=${dispatchMessageId}&source=my-cool-site?isSquare=true&backgroundColor=111111`}
           title="dispatch poll card"
         />
