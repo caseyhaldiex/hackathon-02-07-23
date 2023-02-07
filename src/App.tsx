@@ -9,6 +9,7 @@ import TestSwipe from "./components/TestSwipe";
 import Intro from "./components/Intro";
 import { Modal } from "./components/Modal/Modal";
 import { useState } from "react";
+import { MoreLikeThisStep } from "./components/MoreLikeThisStep/MoreLikeThisStep";
 import Topics from "./components/Topics";
 import Loom from "./components/Loom";
 
@@ -28,7 +29,12 @@ function Layout() {
         )} 
         {step === 2 && (
           <TestSwipe />
-        )} 
+        )}
+        <div>
+          {step === 3 && (
+            <MoreLikeThisStep onClick={() => console.log("next choice")} />
+          )}
+        </div>
       </Modal>
       <Outlet />
     </>
@@ -49,6 +55,7 @@ function App() {
     <WagmiProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* <Route path="intro" element={<Intro />} />
           <Route path="intro" element={<Intro />} />
           <Route path="topics" element={<Topics />} />
           <Route
@@ -62,7 +69,7 @@ function App() {
           <Route
             path="action-card"
             element={<DispatchCard dispatchMessageId="269" />}
-          />
+          /> */}
         </Route>
       </Routes>
       <ToastContainer position="bottom-right" />
