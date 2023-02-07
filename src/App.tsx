@@ -19,7 +19,11 @@ function Layout() {
   return (
     <>
       <Modal onClick={() => setStep(step + 1)}>
-        <div>{step === 2 && <MoreLikeThisStep />}</div>
+        <div>
+          {step === 2 && (
+            <MoreLikeThisStep onClick={() => console.log("next choice")} />
+          )}
+        </div>
       </Modal>
       <Navbar />
       <TestSwipe />
@@ -42,7 +46,7 @@ function App() {
     <WagmiProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="intro" element={<Intro />} />
+          {/* <Route path="intro" element={<Intro />} />
           <Route
             path="info-card"
             element={<DispatchCard dispatchMessageId="120" />}
@@ -54,7 +58,7 @@ function App() {
           <Route
             path="action-card"
             element={<DispatchCard dispatchMessageId="269" />}
-          />
+          /> */}
         </Route>
       </Routes>
       <ToastContainer position="bottom-right" />
