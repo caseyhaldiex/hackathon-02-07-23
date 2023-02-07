@@ -54,15 +54,15 @@ function TestSwipe(props: { onComplete: () => void }) {
 
   return (
     <div className="text-white text-center">
-      <h1 className="my-10">
+      <h1 className="my-10 text-base">
         Tell us what kind of messages you would like to see...
       </h1>
       <div className="flex justify-center items-center max-w-[800px] mx-auto">
         <div
-          className="btn cursor-pointer flex flex-col justify-center items-center"
+          className="btn text-sm cursor-pointer flex flex-col justify-center items-center"
           onClick={() => setLike(false)}
         >
-          <img src={dislikeImage} alt="" className="w-6 text-center" />
+          <img src={dislikeImage} alt="" className="w-6 mb-1" />
           No thanks!
         </div>
         <div className="cardContainer w-[380px] h-[300px] mx-[80px] overflow-hidden">
@@ -81,10 +81,10 @@ function TestSwipe(props: { onComplete: () => void }) {
           ))}
         </div>
         <div
-          className="btn cursor-pointer flex flex-col justify-center items-center"
+          className="btn text-sm cursor-pointer flex flex-col justify-center items-center"
           onClick={() => setLike(true)}
         >
-          <img src={thumbsupImage} alt="" className="w-6" />
+          <img src={thumbsupImage} alt="" className="w-6 mb-1" />
           more like this
         </div>
       </div>
